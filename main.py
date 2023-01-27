@@ -293,8 +293,7 @@ def main():
     if args.evaluate:
         args_new = args
         if os.path.isfile(args.evaluate):
-            print("=> loading checkpoint '{}' ... ".format(args.evaluate),
-                  end='')
+            print("=> loading checkpoint '{}' ... ".format(args.evaluate), end='')
             checkpoint = torch.load(args.evaluate, map_location=device)
             #args = checkpoint['args']
             args.start_epoch = checkpoint['epoch'] + 1
