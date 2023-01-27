@@ -150,8 +150,8 @@ args.result = os.path.join('..', 'results')
 args.use_rgb = ('rgb' in args.input)
 args.use_d = 'd' in args.input
 args.use_g = 'g' in args.input
-args.val_h = 375 # 352
-args.val_w = 1242 # 1216
+args.val_h = 352 # 375 
+args.val_w = 1216 # 1242 
 print(args)
 
 cuda = torch.cuda.is_available() and not args.cpu
