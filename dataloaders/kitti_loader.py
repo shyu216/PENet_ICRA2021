@@ -100,12 +100,22 @@ def get_paths_and_transform(split, args):
         transform = no_transform
         glob_d = os.path.join(
             args.data_folder,
-            "data_depth_selection/test_depth_completion_anonymous/velodyne_raw/*.png"
+            '../SFD/data/kitti_sfd_seguv_twise/[training,testing]/depth_sparse/*.png'
         )
         glob_gt = None  # "test_depth_completion_anonymous/"
         glob_rgb = os.path.join(
             args.data_folder,
-            "data_depth_selection/test_depth_completion_anonymous/image/*.png")
+            '../OpenPCDet/data/kitti/[training,testing]/image_2/*.png')
+    # elif split == "test_completion":
+    #     transform = no_transform
+    #     glob_d = os.path.join(
+    #         args.data_folder,
+    #         "data_depth_selection/test_depth_completion_anonymous/velodyne_raw/*.png"
+    #     )
+    #     glob_gt = None  # "test_depth_completion_anonymous/"
+    #     glob_rgb = os.path.join(
+    #         args.data_folder,
+    #         "data_depth_selection/test_depth_completion_anonymous/image/*.png")
     elif split == "test_prediction":
         transform = no_transform
         glob_d = None
