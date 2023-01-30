@@ -21,6 +21,8 @@ from model import PENet_C1
 from model import PENet_C2
 from model import PENet_C4
 
+import torchvision.transforms as tfs
+
 parser = argparse.ArgumentParser(description='Sparse-to-Dense')
 parser.add_argument('-n',
                     '--network-model',
@@ -196,7 +198,8 @@ def iterate(mode, args, loader, model, optimizer, logger, epoch):
         }
 
         print(batch_data['rgb'].size())
-        batch_data['rgb']=batch_data['rgb'][0:1216,0:352]
+        tf=tfs.CenterCrop((352, 1216))
+        batch_data['rgb']=tf(batch_data['rgb'])
         print(batch_data['rgb'].size())
 
         gt = batch_data[
