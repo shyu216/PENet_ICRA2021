@@ -262,7 +262,7 @@ def iterate(mode, args, loader, model, optimizer, logger, epoch):
 
         if mode == "test_completion":
             str_i = str(i)
-            path_i = str_i.zfill(10) + '.png'
+            path_i = str_i.zfill(6) + '.png'
             path = os.path.join(args.data_folder_save, path_i)
             vis_utils.save_depth_as_uint16png_upload(pred, path)
 
