@@ -195,6 +195,8 @@ def iterate(mode, args, loader, model, optimizer, logger, epoch):
             for key, val in batch_data.items() if val is not None
         }
 
+        print(batch_data)
+
         gt = batch_data[
             'gt'] if mode != 'test_prediction' and mode != 'test_completion' else None
         data_time = time.time() - dstart
