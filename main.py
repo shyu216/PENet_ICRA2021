@@ -197,11 +197,11 @@ def iterate(mode, args, loader, model, optimizer, logger, epoch):
             for key, val in batch_data.items() if val is not None
         }
 
-        print(batch_data['rgb'].size())
+        # print(batch_data['rgb'].size())
         tf=tfs.CenterCrop((352, 1216))
         batch_data['rgb']=tf(batch_data['rgb'])
         batch_data['d']=tf(batch_data['d'])
-        print(batch_data['rgb'].size())
+        # print(batch_data['rgb'].size())
 
         gt = batch_data[
             'gt'] if mode != 'test_prediction' and mode != 'test_completion' else None
